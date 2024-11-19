@@ -3,6 +3,8 @@ import ErrorHandler from "../middlewares/errorMiddleware.js";
 import { User } from "../models/userSchema.js";
 import { generateToken } from "../utils/jwtToken.js";
 import cloudinary from 'cloudinary'
+
+
 /* Register a patient */
 
 export const patientRegister = catchAsyncErrors(async (req, res, next) => {
@@ -15,7 +17,8 @@ export const patientRegister = catchAsyncErrors(async (req, res, next) => {
     dob,
     gender,
     password,
-    role,
+    role
+   
   } = req.body;
   if (
     !firstName ||
@@ -43,7 +46,7 @@ export const patientRegister = catchAsyncErrors(async (req, res, next) => {
     dob,
     gender,
     password,
-    role,
+     role
   });
 
   generateToken(user, "user Registered!", 200, res);
