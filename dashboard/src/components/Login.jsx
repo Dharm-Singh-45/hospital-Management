@@ -18,7 +18,7 @@ const Login = () => {
     try {
       await axios
         .post(
-          "http://localhost:4000/api/v1/user/login",
+          "https://hospital-management-qj6g.onrender.comapi/v1/user/login",
           { email, password, confirmPassword, role: "Admin" },
           {
             withCredentials: true,
