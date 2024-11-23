@@ -19,7 +19,7 @@ const Login = () => {
 
     try {
       const response = await axios.post(
-        "http://localhost:4000/api/v1/user/login",
+        "https://hospital-management-qj6g.onrender.com/api/v1/user/login",
         { email, password, confirmPassword, role: "Patient" },
         {
           withCredentials: true,
@@ -30,6 +30,7 @@ const Login = () => {
       );
       toast.success(response.data.message);
       setIsAuthenticated(true);
+      
       navigateTo("/");
 
     } catch (error) {
